@@ -1,0 +1,31 @@
+[ req ]
+default_bits            = 2048
+default_md              = sha256
+distinguished_name      = req_distinguished_name
+attributes              = req_attributes
+x509_extensions = v3_ca # The extentions to add to the self signed cert
+
+[ req_attributes ]
+unstructuredName_default        = eMarketingEye
+
+[ req_distinguished_name ]
+countryName_default             = SL
+stateOrProvinceName_default     = Western Provice
+localityName_default            = Colombo
+0.organizationName_default      = eMarketingEye (Pvt) Ltd.
+organizationalUnitName_default  = Network & Infastructure
+emailAddress_default            = sysadmin@emarketingeye.com
+
+[ v3_ca ]
+subjectKeyIdentifier=hash
+authorityKeyIdentifier=keyid:always,issuer
+basicConstraints = CA:true
+
+[ v3_req ]
+basicConstraints = CA:FALSE
+keyUsage = nonRepudiation, digitalSignature, keyEncipherment
+subjectAltName = @alt_names
+
+[ alt_names ]
+DNS.1 = local.sriyanidresspoint.lk
+DNS.2 = *.local.sriyanidresspoint.lk

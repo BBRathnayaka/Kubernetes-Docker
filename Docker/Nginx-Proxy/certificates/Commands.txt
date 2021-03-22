@@ -1,0 +1,7 @@
+1. Update openSSL config File
+
+docker run --rm -v ${PWD}:/work -it nginx /bin/bash -c "sed -i 's/DNS.1.*/DNS.1 = local.emarketingeye.com/g' /work/openssl.cnf && sed -i 's/DNS.2.*/DNS.2 = *.local.emarketingeye.com/g' /work/openssl.cnf"
+
+2. Generate Certificates
+
+docker run --rm -v ${PWD}:/work -it nginx /bin/bash -c "openssl genrsa -out /work/local.emarketingeye.com/local.emarketingeye.com.key 2048 && openssl req -subj '/CN=local.emarketingeye.com' -new -sha256 -key /work/local.emarketingeye.com/local.emarketingeye.com.key -out /work/local.emarketingeye.com/local.emarketingeye.com.csr -config /work/openssl.cnf && openssl x509 -req -days 3650 -in /work/local.emarketingeye.com/local.emarketingeye.com.csr -signkey /work/local.emarketingeye.com/local.emarketingeye.com.key -out /work/local.emarketingeye.com/local.emarketingeye.com.crt -extensions v3_req -extfile /work/openssl.cnf"
