@@ -1,7 +1,7 @@
 # Setup wordpress site on Developer Enviroment
 
 ### Developer Enviroment
-Developer enviroment will be either windows or linux. XAMMP or WAMP server or docker is setup in developers machine.
+Developer enviroment will be either windows or linux. XAMMP/WAMP server or docker is setup in developer machine.
 
 ### site-data
 If core-files of a wordpress site is altered those files are moved into this folder. These should be mounted individually as shown in docker-compose file below.
