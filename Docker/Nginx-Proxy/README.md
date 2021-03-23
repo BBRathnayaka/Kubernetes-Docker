@@ -29,8 +29,8 @@ This generated certificates are stored in the above made directory.
 
 2. Debian
 
-### Enable HTTPS
+### 4. Enable HTTPS
 Create .conf file for the required domain
-	* If https is needed add .conf file to conf directory
-	* Remove .conf file from conf directory if https is not needed
+- `If https is needed add .conf file to conf directory`
+- `Remove .conf file from conf directory if https is not needed`
 
