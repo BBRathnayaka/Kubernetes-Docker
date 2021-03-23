@@ -1,8 +1,15 @@
 # Nginx-Proxy
 
 ### Why proxy ?
----
 A reverse proxy intercepts incoming requests and directs them to the appropriate server. Not only does this speed up performance, it also strengthens server security.
+
+### docker-compose file
+This repository includes certificates & conf files each domain. These are mounted to nginx-proxy,
+```sh
+    volumes:
+      - ./conf:/etc/nginx/conf.d
+      - ./certificates:/etc/nginx/certificates
+```
 
 Clone the repository:
 ```sh
