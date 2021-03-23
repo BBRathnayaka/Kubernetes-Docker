@@ -1,6 +1,6 @@
 # Nginx-Proxy
 
-	## Why proxy ?
+### Why proxy ?
 ---
 A reverse proxy intercepts incoming requests and directs them to the appropriate server. Not only does this speed up performance, it also strengthens server security.
 
