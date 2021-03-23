@@ -4,47 +4,20 @@
 A reverse proxy intercepts incoming requests and directs them to the appropriate server. Not only does this speed up performance, it also strengthens server security.
 
 ### docker-compose file
-This repository includes certificates & conf files each domain. These are mounted to nginx-proxy,
+This repository includes certificates & conf files for each domain. These are mounted to nginx-proxy,
 ```sh
     volumes:
       - ./conf:/etc/nginx/conf.d
       - ./certificates:/etc/nginx/certificates
 ```
 
-Clone the repository:
+### Update openSSL config File 
 ```sh
-$ git clone git@github.com:BBRathnayaka/RunC-CVE-2019-5736.git
+docker run --rm -v ${PWD}:/work -it nginx /bin/bash -c "sed -i 's/DNS.1.*/DNS.1 = local.emarketingeye.com/g' /work/openssl.cnf && sed -i 's/DNS.2.*/DNS.2 = *.local.emarketingeye.com/g' /work/openssl.cnf"
 ```
 
-### Exec POC
-Overwrites runc with a simple program that prints a string.
-
-Running the exec POC:
+### Generate Certificates
 ```sh
-$ docker build -t cve-2019-5736:exec_POC ./RunC-CVE-2019-5736/exec_POC
-$ docker run -d --rm --name poc_ctr cve-2019-5736:exec_POC
-$ docker exec poc_ctr bash
-```
-### Malicious Image POC
-Overwrites runc with a simple reverse shell bash script that connects to localhost:2345.
-
-Listen for the reverse shell:
-```sh
-$ nc -nvlp 2345
+docker run --rm -v ${PWD}:/work -it nginx /bin/bash -c "openssl genrsa -out /work/local.emarketingeye.com/local.emarketingeye.com.key 2048 && openssl req -subj '/CN=local.emarketingeye.com' -new -sha256 -key /work/local.emarketingeye.com/local.emarketingeye.com.key -out /work/local.emarketingeye.com/local.emarketingeye.com.csr -config /work/openssl.cnf && openssl x509 -req -days 3650 -in /work/local.emarketingeye.com/local.emarketingeye.com.csr -signkey /work/local.emarketingeye.com/local.emarketingeye.com.key -out /work/local.emarketingeye.com/local.emarketingeye.com.crt -extensions v3_req -extfile /work/openssl.cnf"
 ```
 
-From a different shell, run the malicious image POC:
-```sh
-$ docker build -t cve-2019-5736:malicious_image_POC ./RunC-CVE-2019-5736/malicious_image_POC
-$ docker run --rm cve-2019-5736:malicious_image_POC
-```
-#### Reference
-```
-See [Twistlock Labs](https://www.twistlock.com/labs-blog/breaking-docker-via-runc-explaining-cve-2019-5736/ "Explaining CVE-2019-5763") for an explanation of CVE-2019-5736 and the POCs.
-
-The malicious image POC is heavily based on [q3k’s POC](https://github.com/q3k/cve-2019-5736-poc), so all credit goes to him.
-```
-
-
-=======
->>>>>>> 6336d8e5c8c9804aaeb076ad1fbea1975a3cae6f
