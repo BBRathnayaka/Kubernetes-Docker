@@ -1,0 +1,25 @@
+version: '3.3'
+services:
+  site1:
+    build:
+      context: ./
+      dockerfile: eme.dockerfile    
+    restart: always
+    ports:
+      - 80
+    volumes:
+      - ./site-data/annual-trip-2016:/var/www/html/annual-trip-2016
+      - ./site-data/holidays:/var/www/html/holidays
+      - ./site-data/newsletters:/var/www/html/newsletters
+      - ./site-data/.htaccess:/var/www/html/.htaccess
+      - ./site-data/emebase-config.ini:/var/www/html/emebase-config.ini
+      - ./site-data/favicon.ico:/var/www/html/favicon.ico
+      - ./site-data/wp-config.php:/var/www/html/wp-config.php
+      - ./wp-content:/var/www/html/wp-content
+    networks:
+      - default
+networks:
+  default:
+    external:
+      name: nginx-proxy_network
+      
