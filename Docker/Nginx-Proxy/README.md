@@ -1,10 +1,7 @@
 # Nginx-Proxy
-<<<<<<< HEAD
 
-<h2 align="center">Nginx-Proxy</h2>
-
----
 	## Why proxy ?
+---
 A reverse proxy intercepts incoming requests and directs them to the appropriate server. Not only does this speed up performance, it also strengthens server security.
 
 Clone the repository:
