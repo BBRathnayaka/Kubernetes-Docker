@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600" rel="stylesheet">
+
+	<meta charset="UTF-8">
+	<title>EME Holiday Calendar 2020</title>
+
+	<style>
+		body {
+			padding: 0;
+			margin: 0;
+			background: #222222;
+		}
+		img {
+			display: block;
+			margin: 0 auto;
+		}
+
+		ul{
+			list-style-type: none;
+			margin: 0 auto;
+			width: 1000px;
+			padding:0;
+			text-align: center;
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			height: 50px;
+			background: #ffffff;
+			-webkit-box-shadow: 0px 10px 5px -10px rgba(0,0,0,0.75);
+			-moz-box-shadow: 0px 10px 5px -10px rgba(0,0,0,0.75);
+			box-shadow: 0px 10px 5px -10px rgba(0,0,0,0.75);
+
+		}
+
+		li{
+			width: calc(100% / 12);
+			font-family: 'Poppins', sans-serif;
+			display: block;			
+			float: left;
+			font-weight:100;
+		}		
+
+		a{
+			display: block;
+			height: 50px;
+			line-height: 50px;
+			color: black;
+			text-decoration: none;
+			position: relative;
+		}
+
+		a:hover {
+    		background-color: #ff7f0d;
+    		color: white;
+		}
+
+		a.active {
+			background-color: #ff7f0d;
+    		color: white;
+		}
+
+		.calendar-header {
+			margin-top: 50px;
+		}
+		#calendarMenu li a {
+			border-right: 1px solid #d1d1d1;
+			font-size: 11px;
+		}
+		#calendarMenu li:last-child a {
+			border-right: none;
+			width: 84px;
+		}
+		a span {
+			position: relative;
+			display: block;
+			width: 100%;
+			color: #000000;
+			background: #ffffff;
+			-webkit-transition: -webkit-transform 0.3s;
+			-moz-transition: -moz-transform 0.3s;
+			transition: transform 0.3s;
+			-webkit-transform-origin: 50% 0;
+			-moz-transform-origin: 50% 0;
+			transform-origin: 50% 0;
+			-webkit-transform-style: preserve-3d;
+			-moz-transform-style: preserve-3d;
+			transform-style: preserve-3d;
+		}
+		a span:before {
+			position: absolute;
+			top: 100%;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: #fa7000;
+			color: #ffffff;
+			content: "";
+			-webkit-transition: background 0.3s;
+			-moz-transition: background 0.3s;
+			transition: background 0.3s;
+			-webkit-transform: rotateX(-90deg);
+			-moz-transform: rotateX(-90deg);
+			transform: rotateX(-90deg);
+			-webkit-transform-origin: 50% 0;
+			-moz-transform-origin: 50% 0;
+			transform-origin: 50% 0;
+		}
+		a:hover span, a:focus span {
+			-webkit-transform: rotateX(90deg) translateY(-22px);
+			-moz-transform: rotateX(90deg) translateY(-22px);
+			transform: rotateX(90deg) translateY(-22px);
+		}
+		a:hover span:before, a:focus span:before {
+			background: #ff7f0d;
+			content: attr(data-hover);
+		}
+		.back-to-top {
+			position: fixed;
+			bottom: 100px;
+			right: 100px;
+			display: inline-block;
+		}
+		.back-to-top:hover, .back-to-top:focus {
+			background: none;
+			outline: none;
+		}
+	</style>	
+
+</head>
+<body id="top">
+
+	<ul id="calendarMenu">
+		<li><a href="#jan"><span data-hover="JANUARY">JANUARY</span></a></li>
+		<li><a href="#feb"><span data-hover="FEBRUARY">FEBRUARY</span></a></li>
+		<li><a href="#mar"><span data-hover="MARCH">MARCH</span></a></li>
+		<li><a href="#apr"><span data-hover="APRIL">APRIL</span></a></li>
+		<li><a href="#may"><span data-hover="MAY">MAY</span></a></li>
+		<li><a href="#jun"><span data-hover="JUNE">JUNE</span></a></li>
+		<li><a href="#jul"><span data-hover="JULY">JULY</span></a></li>
+		<li><a href="#aug"><span data-hover="AUGUST">AUGUST</span></a></li>
+		<li><a href="#sep"><span data-hover="SEPTEMBER">SEPTEMBER</span></a></li>
+		<li><a href="#oct"><span data-hover="OCTOBER">OCTOBER</span></a></li>
+		<li><a href="#nov"><span data-hover="NOVEMBER">NOVEMBER</span></a></li>
+		<li><a href="#dec"><span data-hover="DECEMBER">DECEMBER</span></a></li>
+	</ul>
+
+		<img class="calendar-header" src="images/01-header.jpg" alt="Holiday Calendar 2020">
+		<img id="jan" src="images/03-jan.jpg" alt="Holiday Calendar 2020">
+		<img id="feb" src="images/04-feb.jpg" alt="Holiday Calendar 2020">
+		<img id="mar" src="images/05-mar.jpg" alt="Holiday Calendar 2020">
+		<img id="apr" src="images/06-april.jpg" alt="Holiday Calendar 2020">
+		<img id="may" src="images/07-may.jpg" alt="Holiday Calendar 2020">
+		<img id="jun" src="images/08-june.jpg" alt="Holiday Calendar 2020">
+		<img id="jul" src="images/09-july.jpg" alt="Holiday Calendar 2020">
+		<img id="aug" src="images/10-august.jpg" alt="Holiday Calendar 2020">
+		<img id="sep" src="images/11-september.jpg" alt="Holiday Calendar 2020">
+		<img id="oct" src="images/12-october.jpg" alt="Holiday Calendar 2020">
+		<img id="nov" src="images/13-november.jpg" alt="Holiday Calendar 2020">
+		<img id="dec" src="images/14-december.jpg" alt="Holiday Calendar 2020">
+		<img src="images/15-footer.jpg" alt="Holiday Calendar 2020">
+
+	<a class="back-to-top" href="#top"><img src="images/arrow-up.png" alt=""></a>
+</body>
+<script>
+		$('a[href*="#"]:not([href="#"])').click(function() {
+			if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+				var target = $(this.hash);
+				target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+				if (target.length) {
+					$('html, body').animate({
+						scrollTop: target.offset().top - 50
+					}, 1000);
+					return false;
+				}
+			}
+		});
+
+		$('#calendarMenu').find('li a').click(function() {
+			$('#calendarMenu').find('li a').removeClass('active');
+			$(this).addClass('active');
+		});
+	</script>
+</html>
