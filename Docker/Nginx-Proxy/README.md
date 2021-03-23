@@ -1,4 +1,5 @@
 # Nginx-Proxy
+<<<<<<< HEAD
 
 <h2 align="center">Nginx-Proxy</h2>
 
@@ -41,3 +42,5 @@ The malicious image POC is heavily based on [q3k’s POC](https://github.com/q3k
 ```
 
 
+=======
+>>>>>>> 6336d8e5c8c9804aaeb076ad1fbea1975a3cae6f
