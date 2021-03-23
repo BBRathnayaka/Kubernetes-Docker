@@ -34,3 +34,4 @@ Create .conf file for the required domain
 - `If https is needed add .conf file to conf directory`
 - `Remove .conf file from conf directory if https is not needed`
 
+### 5. Run docker-compose file
