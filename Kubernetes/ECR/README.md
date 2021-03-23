@@ -1,6 +1,4 @@
-# Nginx-Proxy
-
-### Amazon Elastic Container Registry (ECR)
+# Amazon Elastic Container Registry (ECR)
 Amazon Elastic Container Registry (ECR) is a fully managed container registry that makes it easy to store, manage, share, and deploy your container images and artifacts anywhere. 
 
 #### How it Works 
