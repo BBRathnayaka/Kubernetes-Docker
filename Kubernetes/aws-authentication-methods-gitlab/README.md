@@ -1,13 +1,17 @@
 # AWS Authentication in GitLab
 
-Normal way of authenticating AWS services with full access - ECR,EKS in GitLab
+<h1 align="center">
+  <img src="https://github.com/SocialGouv/gitlab-ci-yml/raw/master/.github/gitlab.gif" width="250"/>
+  <p align="center">.gitlab-ci.yml</p>
+  <p align="center" style="font-size: 0.5em">✨✨✨✨✨✨✨✨</p>
+</h1>
 
-.gitlab-ci.yml
-```sh
-stages:
-  - publish
-  - deploy
+Normal way of authenticating AWS services - ECR,EKS in GitLab
 
+Use like this in your `.gitlab-ci.yml` :
+
+```yml
+---
 variables:
   DOCKER_REGISTRY: 085813410481.dkr.ecr.us-west-2.amazonaws.com
   AWS_DEFAULT_REGION: us-west-2
@@ -46,8 +50,8 @@ k8s-deploy:
     - echo $OUTPUT
     - sed -i "s/<VERSION>/${CI_PIPELINE_IID}/g" deployments/deploy.yml
     - kubectl apply -f deployments/deploy.yml 
-
 ```
+
 To perform authentication with only gitlab , we need to add variables to gitlab project,
 
 Administrator -> project -> CI/CD Settings -> Varibales ->
