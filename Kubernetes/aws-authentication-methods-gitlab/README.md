@@ -1,5 +1,11 @@
 # AWS Authentication in GitLab
 
+## Methods
+	1. Adding Required Variables to GitLab 
+	2. Mount aws conf to GitLab Runner volumes [config.toml]
+	3. Create a AWS role with full access policy 
+
+
 <h1 align="center">
   <img src="https://github.com/SocialGouv/gitlab-ci-yml/raw/master/.github/gitlab.gif" width="250"/>
 </h1>
