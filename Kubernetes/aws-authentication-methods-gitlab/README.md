@@ -2,8 +2,6 @@
 
 <h1 align="center">
   <img src="https://github.com/SocialGouv/gitlab-ci-yml/raw/master/.github/gitlab.gif" width="250"/>
-  <p align="center">.gitlab-ci.yml</p>
-  <p align="center" style="font-size: 0.5em">✨✨✨✨✨✨✨✨</p>
 </h1>
 
 Normal way of authenticating AWS services - ECR,EKS in GitLab
