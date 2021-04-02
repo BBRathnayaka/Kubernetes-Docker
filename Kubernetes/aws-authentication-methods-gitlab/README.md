@@ -2,7 +2,7 @@
 
 ## Methods
 [Adding Required Variables to GitLab](https://github.com/BBRathnayaka/Kubernetes-Docker/tree/master/Kubernetes/aws-authentication-methods-gitlab#normal-way-of-authenticating-aws-services---ecreks-in-gitlab)
-	2. Mount aws conf to GitLab Runner volumes [config.toml]
+[Mount aws conf to GitLab Runner volumes](#)
 	3. Create a AWS role with full access policy 
 
 
